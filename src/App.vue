@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { AppEnvironment } from './appEnvironment';
 import Home from './views/home/Home.vue';
-
+document.getElementsByTagName('title')[0].text = AppEnvironment.APP_TITLE;
 </script>
 
 <template>
@@ -13,6 +14,14 @@ import Home from './views/home/Home.vue';
     </a>
   </div>
   <Home :meta="{ pageName: 'Home' }" />
+  <div style="display: grid;">
+    <span>
+      {{ AppEnvironment.APP_TITLE }}
+    </span>
+    <small>
+      {{ AppEnvironment.APP_VERSION }} - {{ AppEnvironment.APP_ENV }}
+    </small>
+  </div>
 </template>
 
 <style scoped>

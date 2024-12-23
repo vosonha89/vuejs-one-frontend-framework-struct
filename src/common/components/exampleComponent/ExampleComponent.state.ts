@@ -1,4 +1,4 @@
-import { VueComponentState } from '../../types/vueComponentState';
+import { BaseComponentState } from '../../types/baseComponentState';
 import { ExampleComponent } from './ExampleComponent.model';
 
 export class ExampleComponentProps {
@@ -6,7 +6,7 @@ export class ExampleComponentProps {
     public msg?: string;
 }
 
-export class ExampleComponentState extends VueComponentState {
+export class ExampleComponentState extends BaseComponentState {
     public model: ExampleComponent = new ExampleComponent();
 
     public async init(): Promise<void> {

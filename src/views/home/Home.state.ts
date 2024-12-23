@@ -1,11 +1,11 @@
-import { VueComponentState } from '../../common/types/vueComponentState';
+import { BaseComponentState } from '../../common/types/baseComponentState';
 import { ExampleComponent } from './Home.model';
 
 export class HomeProps {
     public pageName?: string;
 }
 
-export class HomeState extends VueComponentState {
+export class HomeState extends BaseComponentState {
     public model: ExampleComponent = new ExampleComponent();
 
     public async init(): Promise<void> {

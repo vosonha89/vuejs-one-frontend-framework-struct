@@ -1,6 +1,6 @@
 import { ComponentState } from 'one-frontend-framework';
 
-export abstract class VueComponentState extends ComponentState {
+export abstract class BaseComponentState extends ComponentState {
     /**
      * App on mounted
      */

@@ -1,11 +1,14 @@
 {
   "name": "vuejs-one-frontend-framework-struct",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run lint && vite",
-    "build": "npm run lint && vue-tsc -b && vite build",
+    "start": "npm run dev",
+    "dev": "npm run lint && vite --mode development",
+    "build:dev": "npm run lint && vue-tsc -b && vite build --mode development",
+    "build:uat": "npm run lint && vue-tsc -b && vite build --mode uat",
+    "build:production": "npm run lint && vue-tsc -b && vite build --mode production",
     "preview": "npm run lint && vite preview",
     "lint": "eslint ."
   },
