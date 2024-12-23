@@ -1,21 +1,24 @@
 <script lang="ts">
-import { defineComponent, } from 'vue';
+import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
-import { HelloWorldState, HelloWorldProps } from './HelloWorld.state.ts';
+import { ExampleComponentState, ExampleComponentProps } from './ExampleComponent.state.ts';
 
-const state = new HelloWorldState();
+const state = new ExampleComponentState();
 export default defineComponent({
   inheritAttrs: false,
   props: {
-    meta: Object as PropType<HelloWorldProps>
+    meta: {
+      type: Object as PropType<ExampleComponentProps>,
+      default: new ExampleComponentProps()
+    }
   },
   data() {
     return state.model;
   },
-  methods: {
-  },
   async mounted() {
     await state.init();
+  },
+  methods: {
   }
 })
 </script>
@@ -26,10 +29,10 @@ export default defineComponent({
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <span>{{ comment }}</span>
-    <input v-model="comment"></input>
+    <input v-model="comment" />
     <p>
       Edit
-      <code>components/HelloWorld.vue</code> to test HMR
+      <code>components/ExampleComponent.vue</code> to test HMR
     </p>
   </div>
 
@@ -46,5 +49,5 @@ export default defineComponent({
 </template>
 
 <style scoped>
-@import './HelloWorld.scss';
+@import './ExampleComponent.scss';
 </style>

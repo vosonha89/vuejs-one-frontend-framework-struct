@@ -22,6 +22,7 @@ This project uses **Vue 3** for the user interface, **TypeScript** for static ty
 - **Vue 3**: Modern JavaScript framework for building UIs.
 - **TypeScript**: Superset of JavaScript providing static typing.
 - **Vite**: A fast build tool optimized for modern frontend frameworks like Vue.
+- **One-Frontend-Framework**: https://www.npmjs.com/package/one-frontend-framework
 
 ## Project Structure
 
@@ -31,8 +32,6 @@ Here is an overview of the project directory structure:
 ### `src/`
 
 The `src` directory contains all of the source code for the application. This is where most of the development takes place. It is further divided into several subdirectories:
-
-- **`/components`**: Reusable UI components, such as buttons, modals, or form inputs. Each component is typically in its own folder, which includes a `.jsx` or `.tsx` file and a corresponding CSS/SCSS file if necessary.
 
 - **`/assets`**: Contains static assets like images, fonts, and other resources that are bundled during the build process..
 
