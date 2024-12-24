@@ -1,19 +1,16 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
 import { AppEnvironment } from './appEnvironment';
-import Home from './views/home/Home.vue';
+import { appRouteNames } from './appRouter';
 document.getElementsByTagName('title')[0].text = AppEnvironment.APP_TITLE;
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/assets/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="/assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div style="display: flex; justify-content: space-between;">
+    <RouterLink :to="{ name: appRouteNames.Home }">Home</RouterLink>
+    <RouterLink :to="{ name: appRouteNames.About }">About</RouterLink>
   </div>
-  <Home :meta="{ pageName: 'Home' }" />
+  <RouterView></RouterView>
   <div style="display: grid;">
     <span>
       {{ AppEnvironment.APP_TITLE }}

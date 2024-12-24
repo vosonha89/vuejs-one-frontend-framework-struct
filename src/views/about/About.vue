@@ -1,15 +1,15 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
-import { HomeState, HomeProps } from './Home.state.ts';
+import { AboutState, AboutProps } from './About.state.ts';
 
-const state = new HomeState();
+const state = new AboutState();
 export default defineComponent({
   inheritAttrs: false,
   props: {
     meta: {
-      type: Object as PropType<HomeProps>,
-      default: new HomeProps()
+      type: Object as PropType<AboutProps>,
+      default: new AboutProps()
     }
   },
   data() {
@@ -24,9 +24,9 @@ export default defineComponent({
 </script>
 
 <template>
-  <h1>Home</h1>
+  <h1>About</h1>
 </template>
 
 <style scoped>
-@import './Home.scss';
+@import './About.scss';
 </style>

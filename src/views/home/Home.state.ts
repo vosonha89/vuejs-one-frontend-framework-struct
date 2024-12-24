@@ -1,12 +1,11 @@
 import { BaseComponentState } from '../../common/types/baseComponentState';
-import { ExampleComponent } from './Home.model';
+import { HomeModel } from './Home.model';
 
 export class HomeProps {
-    public pageName?: string;
 }
 
 export class HomeState extends BaseComponentState {
-    public model: ExampleComponent = new ExampleComponent();
+    public model: HomeModel = new HomeModel();
 
     public async init(): Promise<void> {
         const me = this;
