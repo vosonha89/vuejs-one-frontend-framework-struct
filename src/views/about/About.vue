@@ -17,7 +17,7 @@ export default defineComponent({
     };
   },
   async mounted() {
-    await state.init();
+    await this.state.init();
   },
   methods: {
   }
