@@ -3,7 +3,6 @@ import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 import { AboutState, AboutProps } from './About.state.ts';
 
-const state = new AboutState();
 export default defineComponent({
   inheritAttrs: false,
   props: {
@@ -13,7 +12,9 @@ export default defineComponent({
     }
   },
   data() {
-    return state.model;
+    return {
+      state: new AboutState()
+    };
   },
   async mounted() {
     await state.init();

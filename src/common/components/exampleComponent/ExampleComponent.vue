@@ -3,7 +3,6 @@ import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 import { ExampleComponentState, ExampleComponentProps } from './ExampleComponent.state.ts';
 
-const state = new ExampleComponentState();
 export default defineComponent({
   inheritAttrs: false,
   props: {
@@ -13,7 +12,9 @@ export default defineComponent({
     }
   },
   data() {
-    return state.model;
+    return {
+      state: new ExampleComponentState()
+    };
   },
   async mounted() {
     await state.init();
@@ -26,16 +27,6 @@ export default defineComponent({
 <template>
   <h1>{{ meta?.msg }}</h1>
   <h1>{{ meta?.name }}</h1>
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <span>{{ comment }}</span>
-    <input v-model="comment" />
-    <p>
-      Edit
-      <code>components/ExampleComponent.vue</code> to test HMR
-    </p>
-  </div>
-
   <p>
     Check out
     <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank">create-vue</a>, the official Vue + Vite
